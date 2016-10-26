@@ -3,6 +3,7 @@
  */
 var input = document.getElementById("input-text"),
     addBtn = document.getElementById("add-btn"),
-    list = document.getElementById("to-do-list");
+    list = document.getElementById("list-box");
 
 var todos = [ {text: "Clean the toilet"}, {text: "Wash the dishes"}, {text: "Sweep the floor"} ];
+
