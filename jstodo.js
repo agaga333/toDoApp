@@ -7,11 +7,9 @@ var input = document.getElementById("input-text"),
 
 var todos = [ {text: "Clean the toilet"}, {text: "Wash the dishes"}, {text: "Sweep the floor"} ];
 
-list.innerHTML = '<ul><li>Aga</li><li>Tomek</li></ul>'
-
 function displayToDos() {
     var todosList = '<ul>';
-    for (i = 0; len = todos.length, i < len; i++) {
+    for (var i = 0, len = todos.length; i < len; i++) {
         todosList += '<li>' + todos[i].text + '</li>';
     }
     todosList += '</ul>';
