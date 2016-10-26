@@ -14,7 +14,7 @@ function displayToDos() {
     for (i = 0; len = todos.length, i < len; i++) {
         todosList += '<li>' + todos[i].text + '</li>';
     }
-    todoList += '</ul>';
+    todosList += '</ul>';
 }
 
-console.log(displayToDos())
+console.log(displayToDos());
