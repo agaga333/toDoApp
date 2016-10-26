@@ -16,3 +16,4 @@ function displayToDos() {
     list.innerHTML = todosList;
 }
 
+console.log(displayToDos());
