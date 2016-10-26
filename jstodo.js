@@ -24,3 +24,9 @@ function addToDo() {
 }
 
 addBtn.addEventListener("click", addToDo);
+
+function init() {
+    displayToDos();
+}
+
+init();
