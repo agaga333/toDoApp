@@ -17,3 +17,11 @@ function displayToDos() {
 }
 
 displayToDos();
+
+function addToDos() {
+    todos.push({text: input.value});
+}
+
+displayToDos();
+
+addBtn.addEventListener("click", addToDos);
