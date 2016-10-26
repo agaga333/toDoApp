@@ -35,7 +35,7 @@ function validateAddBtn() {
     }
 }
 
-input.addEventListener("keypress", validateAddBtn);
+input.addEventListener("keyup", validateAddBtn);
 
 function init() {
     displayToDos();
