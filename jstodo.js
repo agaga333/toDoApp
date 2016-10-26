@@ -13,6 +13,6 @@ function displayToDos() {
         todosList += '<li>' + todos[i].text + '</li>';
     }
     todosList += '</ul>';
+    list.innerHTML = todosList;
 }
 
-console.log(displayToDos());
