@@ -38,7 +38,6 @@ function validateAddBtn() {
 input.addEventListener("keypress", validateAddBtn);
 
 function init() {
-    validateAddBtn();
     displayToDos();
 }
 
