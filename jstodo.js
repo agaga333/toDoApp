@@ -18,10 +18,9 @@ function displayToDos() {
 
 displayToDos();
 
-function addToDos() {
+function addToDo() {
     todos.push({text: input.value});
+    displayToDos();
 }
 
-displayToDos();
-
-addBtn.addEventListener("click", addToDos);
+addBtn.addEventListener("click", addToDo);
