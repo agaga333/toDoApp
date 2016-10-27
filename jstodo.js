@@ -17,8 +17,7 @@ function displayToDos() {
     }
     todosList += '</ul>';
     list.innerHTML = todosList;
-    removeSpan = document.getElementsByClassName("remove-item");
-    var spans = removeSpan;
+    var spans = document.getElementsByClassName("remove-item");
     for (var i = 0; i < spans.length; i++) {
         spans[i].addEventListener('click', removeToDo)
     }
