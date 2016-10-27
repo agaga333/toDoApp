@@ -4,7 +4,7 @@
 var input = document.getElementById("input-text"),
     addBtn = document.getElementById("add-btn"),
     list = document.getElementById("list-box");
-
+    removeSpan = document.getElementsByClassName("remove-item")
 
 var todos = [ ];
 
@@ -14,9 +14,13 @@ function displayToDos() {
         return;
     }
     for (var i = 0, len = todos.length; i < len; i++) {
-        todosList += '<li>' + todos[i].text + ' ' + '<span id="' + i + '">X</span>' + '</li>';
+        todosList += '<li>' + todos[i].text + ' ' + '<span class="remove-item" id="' + i + '">X</span>' + '</li>';
     }
     todosList += '</ul>';
+    var spans = removeSpan;
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].addEventListener('click', removeToDo)
+    }
     list.innerHTML = todosList;
 }
 
@@ -41,12 +45,10 @@ input.addEventListener("keyup", validateAddBtn);
 
 
 function removeToDo() {
-    var id = .getAttribute('id');
+    var id = this.getAttribute('id');
     todos.splice(id,1);
     displayToDos();
 }
-
-input.addEventListener("click", removeToDo);
 
 function init() {
     displayToDos();
