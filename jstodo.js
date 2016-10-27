@@ -5,6 +5,7 @@ var input = document.getElementById("input-text"),
     addBtn = document.getElementById("add-btn"),
     list = document.getElementById("list-box");
 
+
 var todos = [ ];
 
 function displayToDos() {
@@ -21,7 +22,6 @@ function displayToDos() {
     for (var i = 0; i < spans.length; i++) {
         spans[i].addEventListener('click', removeToDo)
     }
-
 }
 
 function addToDo() {
@@ -48,10 +48,23 @@ function removeToDo() {
     var id = this.getAttribute('id');
     todos.splice(id,1);
     displayToDos();
+    return false;
+}
+
+function addBackground(){
+    this.style.backgroundColor = 'green';
+}
+
+function addProperty(){
+    var description = document.getElementByClassName("duties-description");
+    for (var i = 0; i < description.length; i++) {
+    description[i].addEventListener('click', addBackground);
+    }
 }
 
 function init() {
     displayToDos();
+    addProperty();
 }
 
 init();
