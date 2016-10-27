@@ -5,6 +5,7 @@ var input = document.getElementById("input-text"),
     addBtn = document.getElementById("add-btn"),
     list = document.getElementById("list-box");
 
+
 var todos = [ ];
 
 function displayToDos() {
@@ -13,7 +14,7 @@ function displayToDos() {
         return;
     }
     for (var i = 0, len = todos.length; i < len; i++) {
-        todosList += '<li>' + todos[i].text + '</li>';
+        todosList += '<li>' + todos[i].text + ' ' + '<span id="' + i + '">X</span>' + '</li>';
     }
     todosList += '</ul>';
     list.innerHTML = todosList;
@@ -23,6 +24,7 @@ function addToDo() {
     todos.push({text: input.value});
     displayToDos();
     input.value = '';
+    addBtn.disabled = true;
 }
 
 addBtn.addEventListener("click", addToDo);
@@ -36,6 +38,15 @@ function validateAddBtn() {
 }
 
 input.addEventListener("keyup", validateAddBtn);
+
+
+function removeToDo() {
+    var id = .getAttribute('id');
+    todos.splice(id,1);
+    displayToDos();
+}
+
+input.addEventListener("click", removeToDo);
 
 function init() {
     displayToDos();
