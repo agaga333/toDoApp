@@ -4,7 +4,6 @@
 var input = document.getElementById("input-text"),
     addBtn = document.getElementById("add-btn"),
     list = document.getElementById("list-box");
-    removeSpan = document.getElementsByClassName("remove-item")
 
 var todos = [ ];
 
@@ -17,11 +16,13 @@ function displayToDos() {
         todosList += '<li>' + todos[i].text + ' ' + '<span class="remove-item" id="' + i + '">X</span>' + '</li>';
     }
     todosList += '</ul>';
+    list.innerHTML = todosList;
+    removeSpan = document.getElementsByClassName("remove-item");
     var spans = removeSpan;
     for (var i = 0; i < spans.length; i++) {
         spans[i].addEventListener('click', removeToDo)
     }
-    list.innerHTML = todosList;
+
 }
 
 function addToDo() {
