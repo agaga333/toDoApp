@@ -25,14 +25,19 @@ var workers = [
     { id: 15, name: "Magda",      type: "P", office: "KO", salary: 220 }
 ];
 
+function findWorkersOfOffice(worker) {
+    return worker.office === office.id;
+}
+
 function addWorkerstoOffices(office) {
     return {
         id: office.id,
         name: office.name,
         headquarter: office.headquarter || false,
-        workers: []
+        workers: workers.filter(findWorkersOfOffice)
     }
 }
 
+
 offices = offices.map(addWorkerstoOffices);
-console.log(offices);
+console.log(office);
