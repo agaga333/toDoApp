@@ -50,7 +50,7 @@ console.log(company);
 
 function calculateAverageWorkersSalary(office) {
         var salarySum = 0;
-        for (i = 0, len = office.workers.length; i < len; i++) {
+        for (var i = 0, len = office.workers.length; i < len; i++) {
             salarySum += office.workers[i].salary;
         }
         return salarySum / len;
@@ -64,13 +64,29 @@ console.log(calculateAverageWorkersSalary(company["Koszalin"]));
 function calculateAverageGlobalSalary() {
     var salarySum = 0;
     var workersLength = 0;
-    for (var prop in company) {
-        for (i = 0, len = company[prop].workers.length; i < len; i++) {
-            salarySum += company[prop].workers[i].salary;
-            workersLength = company[prop].workers.length;
+    for (var office in company) {
+        workersLength += company[office].workers.length;
+        for (var i = 0, len = company[office].workers.length; i < len; i++) {
+            salarySum += company[office].workers[i].salary;
         }
     }
-    return(salarySum/workersLength)
+    return salarySum/workersLength;
 }
 
 console.log(calculateAverageGlobalSalary());
+
+//Napisz funkcję, która zwraca imię pracownika, który najwięcej zarabia dla wybranego przez nas biura wskazówka: array.sort()//
+
+
+function compareSalary(a, b) {
+    return b.salary - a.salary;
+}
+
+function showHighestSalary(office) {
+    // for (var i = 0, len = office.workers.length; i < len; i++) {
+    return office.workers.sort(compareSalary);
+}
+
+console.table(showHighestSalary(company["Gdańsk"]));
+console.table(showHighestSalary(company["Gliwice"]));
+console.table(showHighestSalary(company["Koszalin"]));
