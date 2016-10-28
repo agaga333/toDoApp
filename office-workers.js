@@ -73,4 +73,4 @@ function calculateAverageGlobalSalary() {
     return(salarySum/workersLength)
 }
 
-console.log(calculateAverageGlobalSalary());
+console.log(calculateAverageGlobalSalary());;
