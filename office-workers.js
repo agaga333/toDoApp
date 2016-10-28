@@ -89,4 +89,4 @@ function showHighestSalary(office) {
 
 console.table(showHighestSalary(company["Gdańsk"]));
 console.table(showHighestSalary(company["Gliwice"]));
-console.table(showHighestSalary(company["Koszalin"]));
+console.table(showHighestSalary(company["Koszalin"]));;
