@@ -45,21 +45,8 @@ var IsOfficeWorkerKO = workers.filter(isOfficeWorker("KO"));
 // console.log(IsOfficeWorkerKO);
 
 
-function getWorkers(worker) {
-    return worker.name;
-}
-
-var workersGD = IsOfficeWorkerGD.map(getWorkers);
-// console.log(workersGD);
-
-var workersGL = IsOfficeWorkerGL.map(getWorkers);
-// console.log(workersGL);
-
-var workersKO = IsOfficeWorkerKO.map(getWorkers);
-// console.log(workersKO);
-
-offices[0].workers = workersGD;
-offices[1].workers = workersGL;
-offices[2].workers = workersKO;
+offices[0].workers = IsOfficeWorkerGD;
+offices[1].workers = IsOfficeWorkerGL;
+offices[2].workers = IsOfficeWorkerKO;
 
 console.log(offices);
