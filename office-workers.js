@@ -25,19 +25,52 @@ var workers = [
     { id: 15, name: "Magda",      type: "P", office: "KO", salary: 220 }
 ];
 
-function findWorkersOfOffice(worker) {
-    return worker.office === office.id;
-}
 
 function addWorkerstoOffices(office) {
     return {
         id: office.id,
         name: office.name,
         headquarter: office.headquarter || false,
-        workers: workers.filter(findWorkersOfOffice)
+        workers: workers.filter( function findWorkersOfOffice(worker) {
+            return worker.office === office.id;
+        })
     }
 }
 
-
 offices = offices.map(addWorkerstoOffices);
-console.log(office);
+console.log(offices);
+
+var company = {};
+
+for (var office of offices) {
+    company[office.name] = office;
+}
+
+console.log(company);
+
+function calculateAverageWorkersSalary(office) {
+        var salarySum = 0;
+        for (i = 0, len = office.workers.length; i < len; i++) {
+            salarySum += office.workers[i].salary;
+        }
+        return salarySum / len;
+}
+
+console.log(calculateAverageWorkersSalary(company["Gdańsk"]));
+console.log(calculateAverageWorkersSalary(company["Gliwice"]));
+console.log(calculateAverageWorkersSalary(company["Koszalin"]));
+
+
+function calculateAverageGlobalSalary() {
+    var salarySum = 0;
+    var workersLength = 0;
+    for (var prop in company) {
+        for (i = 0, len = company[prop].workers.length; i < len; i++) {
+            salarySum += company[prop].workers[i].salary;
+            workersLength = company[prop].workers.length;
+        }
+    }
+    return(salarySum/workersLength)
+}
+
+console.log(calculateAverageGlobalSalary());
