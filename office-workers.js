@@ -25,28 +25,14 @@ var workers = [
     { id: 15, name: "Magda",      type: "P", office: "KO", salary: 220 }
 ];
 
-
-function isOfficeWorker (location) {
-    return function (worker) {
-        return worker.office.indexOf(location) !== -1;
+function addWorkerstoOffices(office) {
+    return {
+        id: office.id,
+        name: office.name,
+        headquarter: office.headquarter || false,
+        workers: []
     }
 }
 
-var IsOfficeWorkerGD = workers.filter(isOfficeWorker("GD"));
-
-// console.log(IsOfficeWorkerGD);
-
-var IsOfficeWorkerGL = workers.filter(isOfficeWorker("GL"));
-
-// console.log(IsOfficeWorkerGL);
-
-var IsOfficeWorkerKO = workers.filter(isOfficeWorker("KO"));
-
-// console.log(IsOfficeWorkerKO);
-
-
-offices[0].workers = IsOfficeWorkerGD;
-offices[1].workers = IsOfficeWorkerGL;
-offices[2].workers = IsOfficeWorkerKO;
-
+offices = offices.map(addWorkerstoOffices);
 console.log(offices);
