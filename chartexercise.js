@@ -2,7 +2,7 @@
  * Created by Agnieszka on 2016-10-29.
  */
 function findCountryName(country) {
-    return country = country.name
+    return country.name
 }
 
 var countriesNames = countries.map(findCountryName);
@@ -18,10 +18,11 @@ var barChartData = {
     labels : countriesNames,
     datasets : [
         {
-            fillColor : "#0088ff",
             strokeColor : "rgba(0,0,0,0)",
             highlightFill: "#0070ff",
-            data: countriesNPopulations
+            data: countriesNPopulations,
+            backgroundColor: "#FF6384"
+
         }
     ]
 };
@@ -38,9 +39,19 @@ var opt = {
     tooltipFontStyle: 'bold',
 };
 
-var ctx = document.getElementById("canvas").getContext("2d");;
-var myBarChart = new Chart(ctx, {
-    type: 'bar',
-    data: barChartData,
-    options: opt
-});
+
+var ctx = document.getElementById("canvas").getContext("2d");
+function displayChartType(type) {
+    new Chart(ctx, {
+        type: type,
+        data: barChartData,
+        options: opt
+    })
+}
+
+var addBtnBar = document.getElementById("add-bar-chart"),
+    addBtnPie = document.getElementById("add-pie-chart");
+
+addBtnBar.addEventListener("click", function() {displayChartType('bar')});
+addBtnPie.addEventListener("click", function() {displayChartType('pie')});
+
