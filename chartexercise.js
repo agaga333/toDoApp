@@ -26,5 +26,5 @@ var opt = {
 };
 
 var ctx = document.getElementById("canvas").getContext("2d");
-window.myBar = new Chart(ctx).Bar(barChartData, opt);
+new Chart(ctx).Bar(barChartData, opt);
 
