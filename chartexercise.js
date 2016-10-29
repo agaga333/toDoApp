@@ -8,7 +8,7 @@ function findCountryName(country) {
 var countriesNames = countries.map(findCountryName);
 
 function findCountryPopulation(country) {
-    return country = country.population
+    return country.population
 }
 
 var countriesNPopulations = countries.map(findCountryPopulation);
@@ -36,7 +36,7 @@ var opt = {
     tooltipXPadding: 10,
     tooltipYPadding: 6,
     tooltipFontSize: 18,
-    tooltipFontStyle: 'bold',
+    tooltipFontStyle: 'bold'
 };
 
 
