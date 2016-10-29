@@ -25,5 +25,9 @@ var opt = {
     tooltipFontStyle: 'bold',
 };
 
-var ctx = document.getElementById("canvas").getContext("2d");
-new Chart(ctx).Bar(barChartData, opt);
+var ctx = document.getElementById("canvas").getContext("2d");;
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: opt
+});
