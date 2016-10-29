@@ -84,9 +84,10 @@ function compareSalary(a, b) {
 
 function showHighestSalary(office) {
     // for (var i = 0, len = office.workers.length; i < len; i++) {
-    return office.workers.sort(compareSalary);
+    var sortedWorkers = office.workers.sort(compareSalary);
+    return "The best paid worker is " + sortedWorkers[0].name + " and his salary is " + sortedWorkers[0].salary;
 }
 
-console.table(showHighestSalary(company["Gdańsk"]));
-console.table(showHighestSalary(company["Gliwice"]));
-console.table(showHighestSalary(company["Koszalin"]));
+console.log(showHighestSalary(company["Gdańsk"]));
+console.log(showHighestSalary(company["Gliwice"]));
+console.log(showHighestSalary(company["Koszalin"]));
