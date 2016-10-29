@@ -11,7 +11,8 @@ var barChartData = {
             data: [10,50,40,30,20,10,80]
         }
     ]
-}
+};
+
 var opt = {
     responsive:true,
     animation: false,
